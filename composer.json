@@ -1,5 +1,5 @@
 {
-    "name": "mmoreram/base-bundle",
+    "name": "parclick/base-bundle",
     "description": "Base Bundle for all standard Symfony Bundles",
     "keywords": ["bundle"],
     "homepage": "https://github.com/mmoreram/BaseBundle",
