@@ -52,9 +52,9 @@ abstract class BaseBundle extends Bundle
      *
      * @throws \LogicException
      */
-    public function getContainerExtension()
+    public function getContainerExtension(): ?ExtensionInterface
     {
-        return;
+        return null;
     }
 
     /**

@@ -16,8 +16,8 @@ declare(strict_types=1);
 namespace Mmoreram\BaseBundle\Tests\Bundle;
 
 use Mmoreram\BaseBundle\BaseBundle;
+use Mmoreram\BaseBundle\Dependencies\DependentBundleInterface;
 use Mmoreram\BaseBundle\Tests\Bundle\DependencyInjection\TestExtension;
-use Mmoreram\SymfonyBundleDependencies\DependentBundleInterface;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
@@ -51,7 +51,7 @@ final class TestBundle extends BaseBundle implements DependentBundleInterface
      *
      * @throws \LogicException
      */
-    public function getContainerExtension()
+    public function getContainerExtension(): ?ExtensionInterface
     {
         return new TestExtension();
     }

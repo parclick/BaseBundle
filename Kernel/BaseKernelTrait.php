@@ -87,9 +87,9 @@ trait BaseKernelTrait
     /**
      * Returns an array of bundles to register.
      *
-     * @return BundleInterface[] An array of bundle instances
+     * @return \Traversable|array An array of bundle instances
      */
-    public function registerBundles()
+    public function registerBundles(): \Traversable|array
     {
         return $this->getBundleInstances(
             $this,
@@ -141,9 +141,9 @@ trait BaseKernelTrait
         foreach ($this->routes as $route) {
             is_array($route)
                 ? $routes->add(
-                    $route[2],
-                    $route[0]
-                )->controller($route[1])
+                $route[2],
+                $route[0]
+            )->controller($route[1])
                 : $routes->import($route);
         }
     }
@@ -153,7 +153,7 @@ trait BaseKernelTrait
      *
      * @return string The application root dir
      */
-    public function getRootDir()
+    public function getRootDir(): string
     {
         return $this->getProjectDir();
     }
@@ -179,7 +179,7 @@ trait BaseKernelTrait
      *
      * @return string The project root dir
      */
-    public function getProjectDir()
+    public function getProjectDir(): string
     {
         if (!is_null($this->rootDirPrefix)) {
             return $this->rootDirPrefix;
@@ -193,8 +193,8 @@ trait BaseKernelTrait
         $possibleComposerPath = parent::getProjectDir().'/../../..';
 
         return ((file_exists($possibleComposerPath.'/composer.json'))
-            ? $possibleComposerPath
-            : parent::getProjectDir()).'/var/test/'.$kernelHash;
+                ? $possibleComposerPath
+                : parent::getProjectDir()).'/var/test/'.$kernelHash;
     }
 
     /**

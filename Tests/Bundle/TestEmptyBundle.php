@@ -16,7 +16,7 @@ declare(strict_types=1);
 namespace Mmoreram\BaseBundle\Tests\Bundle;
 
 use Mmoreram\BaseBundle\BaseBundle;
-use Mmoreram\SymfonyBundleDependencies\DependentBundleInterface;
+use Mmoreram\BaseBundle\Dependencies\DependentBundleInterface;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\HttpKernel\KernelInterface;
 
